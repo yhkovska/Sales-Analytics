@@ -2,36 +2,36 @@
 
 ## Overview
 
-This repository contains a collection of SQL case studies built on an e-commerce dataset in BigQuery.
+This repository contains a collection of SQL case studies built on an e-commerce dataset in Google BigQuery.
 
-The projects demonstrate structured analytical thinking — from focused metric calculations to building a dashboard-ready dataset combining multiple business domains.
+The projects demonstrate structured analytical thinking — from focused metric calculations (window functions, aggregations) to building a comprehensive BI-ready dataset combining multiple business domains.
 
-The case studies are organized from foundational analysis to a comprehensive final analytical dataset.
+The case studies are organized from foundational analysis to a full analytical dataset used for dashboarding.
 
 ---
 
 ## Project Structure
 
-### 1️⃣ Email Activity Share (Window Functions Practice)
+### 01 — Email Monthly Share (Window Functions)
 
 Calculation of:
-- Monthly email share per account
-- First and last send date per month
+- Monthly share of emails per account
+- First and last sent date per account per month
 
 Focus:
-- Window functions
-- Partitioning
-- Date transformations
+- Window functions (COUNT, MIN, MAX)
+- DATE_TRUNC & date transformations
+- Partition-based calculations
 
-This case demonstrates control over analytical window logic and aggregation levels.
+Demonstrates analytical window logic and aggregation control.
 
 ---
 
-### 2️⃣ Revenue & Accounts by Continent (CTE & Aggregation)
+### 02 — Revenue & Account Metrics by Continent
 
-Breakdown including:
-- Revenue
-- Revenue by device
+Performance breakdown including:
+- Total revenue
+- Revenue split by device (mobile / desktop)
 - Revenue share from total
 - Account count
 - Verified users
@@ -39,45 +39,44 @@ Breakdown including:
 
 Focus:
 - CTE structuring
-- Conditional aggregation
-- Multi-source joins
+- Conditional aggregation (CASE WHEN)
+- Multi-table joins
 - Window-based percentage calculation
 
-This case demonstrates ability to combine multiple entities into one analytical layer.
+Demonstrates multi-source metric consolidation.
 
 ---
 
-### 3️⃣ Engagement Rate by Device (Nested Data Handling)
+### 03 — Engagement Rate by Device
 
-Calculation of:
-- Share of engaged sessions by device
+Calculation of session engagement share by device type.
 
 Focus:
-- UNNEST
-- Conditional logic
-- Ratio calculation
+- UNNEST for nested data
+- Conditional aggregation
+- Ratio and percentage formatting
 
-This case demonstrates working with nested structures and event-level data.
+Demonstrates working with event-level structured data.
 
 ---
 
-## ⭐ 4️⃣ Main Case: Unified Account & Email Performance Dataset
+## ⭐ 04 — Main Case: Unified Account & Email Performance Dataset
 
-Comprehensive dataset combining:
+Comprehensive analytical dataset combining:
 
 - Account creation metrics
 - Email performance (sent / open / visit)
 - Country-level totals
 - Top-10 country ranking
 - Segmentation by:
+  - Date
   - Country
   - Send interval
   - Verification status
   - Subscription status
-  - Date
 
 Technical focus:
-- Multiple CTE layers
+- Layered CTE architecture
 - UNION ALL for metric separation
 - Window functions (DENSE_RANK)
 - Partition-based totals
@@ -85,6 +84,7 @@ Technical focus:
 - BI-ready dataset preparation
 
 This dataset was used to build a Looker Studio dashboard:
+
 https://lookerstudio.google.com/reporting/87d38168-1b95-4b38-923a-3937dbef6eb4
 
 ---
@@ -92,11 +92,12 @@ https://lookerstudio.google.com/reporting/87d38168-1b95-4b38-923a-3937dbef6eb4
 ## Skills Demonstrated
 
 - Advanced SQL (BigQuery)
-- Analytical window functions
+- Window functions
 - Multi-level aggregation
-- Revenue share & ranking logic
-- Data modeling for reporting
-- Structuring queries for BI tools
+- Revenue share calculations
+- Ranking logic
+- Data modeling for BI tools
+- Dataset preparation for dashboarding
 - Business metric interpretation
 
 ---
